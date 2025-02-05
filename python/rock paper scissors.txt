@@ -1,0 +1,50 @@
+import random
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+
+game_images=[rock,paper,scissors]
+choose_num=int(input("enter number:0,1,2 \n"))
+if choose_num>=0 or choose_num<=2:
+    print(game_images[choose_num])
+comp_choose=random.randint(0,2)
+print(f"computer choice is:")
+print(game_images[comp_choose])
+if choose_num>=3 or choose_num<0:
+    print("invalid")
+elif choose_num==0 and comp_choose==2:
+    print("you win")
+elif choose_num==2 and comp_choose==0:
+    print("you loose")
+elif choose_num>comp_choose:
+    print("you win")
+elif comp_choose>choose_num:
+    print("computer win")
+elif choose_num==comp_choose:
+    print("its draw")
+
+
+
